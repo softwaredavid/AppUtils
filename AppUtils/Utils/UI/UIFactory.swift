@@ -5,13 +5,14 @@
 //  Created by 优路教育  on 2017/12/12.
 //  Copyright © 2017年 田守彬. All rights reserved.
 // 创建各种UI控件
-  // UILabel, UIButton, UITextField, 一像素宽的UIView,一像素高的UIView, UIImageView 等
+// UILabel, UIButton, UITextField, 一像素宽的UIView,一像素高的UIView, UIImageView 等
 
 import UIKit
 
 class UIFactory {
+    
     /// 创建 label
-    func createLabel(frame: CGRect,text:String) -> UILabel? {
+    class func createLabel(frame: CGRect,text:String) -> UILabel? {
         
         let lablel = UILabel(frame:frame)
         lablel.text = text
@@ -19,7 +20,7 @@ class UIFactory {
         return lablel
     }
     /// 创建 button
-    func createButton(frame:CGRect,text:String?=nil,image:String?=nil) -> UIButton? {
+    class func createButton(frame:CGRect,text:String?=nil,image:String?=nil) -> UIButton? {
         
         let button = UIButton(type: .system)
         button.frame = frame
@@ -34,7 +35,7 @@ class UIFactory {
         return button
     }
     /// 创建 textField
-    func createTextField(frame:CGRect, placeholder: String) -> UITextField? {
+    class func createTextField(frame:CGRect, placeholder: String) -> UITextField? {
        
         let textField = UITextField(frame: frame)
         textField.placeholder = placeholder
@@ -42,13 +43,14 @@ class UIFactory {
         return textField
     }
     /// 创建 textView
-    func createTextView(frame:CGRect, placeholder: String) -> UITextView? {
+    class func createTextView(frame:CGRect, placeholder: String) -> SDTextView? {
         
-       
-        return nil
+      let textView = SDTextView(frame: frame, placeholder: placeholder)
+        
+        return textView
     }
     /// 创建 一像素宽的view
-    func createSingWidthView(frame:CGRect,bgColor:UIColor?) -> UIView? {
+    class func createSingWidthView(frame:CGRect,bgColor:UIColor?) -> UIView? {
         
         let view = UIView(frame:frame)
         view.height = 1
@@ -57,7 +59,7 @@ class UIFactory {
         return view
     }
     /// 创建 一像素高的view
-    func createSingHeightView(frame:CGRect,bgColor:UIColor?) -> UIView? {
+    class func createSingHeightView(frame:CGRect,bgColor:UIColor?) -> UIView? {
         
         let view = UIView(frame:frame)
         view.width = 1
@@ -66,7 +68,7 @@ class UIFactory {
         return view
     }
     /// 创建 imageView
-    func createImageView(frame:CGRect,image:String) -> UIImageView? {
+    class func createImageView(frame:CGRect,image:String) -> UIImageView? {
         
         let imageView = UIImageView(frame: frame)
         imageView.image = UIImage(named: image)

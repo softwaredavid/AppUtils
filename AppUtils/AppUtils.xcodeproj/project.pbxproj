@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		2972C8361FDFA38E00F487FD /* UILable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C8351FDFA38E00F487FD /* UILable+Extension.swift */; };
 		2972C83C1FDFA8E000F487FD /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C83B1FDFA8E000F487FD /* UIFactory.swift */; };
-		2972C8421FDFAB4200F487FD /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C8411FDFAB4100F487FD /* PlaceHolderTextView.swift */; };
 		2972C8441FDFADFE00F487FD /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972C8431FDFADFE00F487FD /* UIColor+Extension.swift */; };
 		29835F8A1FDE842F001ED6B0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29835F891FDE842F001ED6B0 /* UIView+Extension.swift */; };
 		29835F8C1FDE844B001ED6B0 /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29835F8B1FDE844B001ED6B0 /* NSString+Extension.swift */; };
+		2986CD421FE2596D00D00F02 /* UITextView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986CD411FE2596D00D00F02 /* UITextView+Extension.swift */; };
+		2986CD441FE25B0100D00F02 /* SDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986CD431FE25B0100D00F02 /* SDTextView.swift */; };
+		2986CD461FE26D5A00D00F02 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986CD451FE26D5A00D00F02 /* UIImageView+Extension.swift */; };
 		299E92E81FD92ABC007A1CA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92E71FD92ABC007A1CA4 /* AppDelegate.swift */; };
 		299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92E91FD92ABC007A1CA4 /* ViewController.swift */; };
 		299E92ED1FD92ABC007A1CA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299E92EB1FD92ABC007A1CA4 /* Main.storyboard */; };
@@ -34,10 +36,12 @@
 /* Begin PBXFileReference section */
 		2972C8351FDFA38E00F487FD /* UILable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Extension.swift"; sourceTree = "<group>"; };
 		2972C83B1FDFA8E000F487FD /* UIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
-		2972C8411FDFAB4100F487FD /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		2972C8431FDFADFE00F487FD /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		29835F891FDE842F001ED6B0 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		29835F8B1FDE844B001ED6B0 /* NSString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
+		2986CD411FE2596D00D00F02 /* UITextView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extension.swift"; sourceTree = "<group>"; };
+		2986CD431FE25B0100D00F02 /* SDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTextView.swift; sourceTree = "<group>"; };
+		2986CD451FE26D5A00D00F02 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		299E92E41FD92ABC007A1CA4 /* AppUtils.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppUtils.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		299E92E71FD92ABC007A1CA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		299E92E91FD92ABC007A1CA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +83,7 @@
 		2972C8401FDFAB4100F487FD /* UIkit */ = {
 			isa = PBXGroup;
 			children = (
-				2972C8411FDFAB4100F487FD /* PlaceHolderTextView.swift */,
+				2986CD431FE25B0100D00F02 /* SDTextView.swift */,
 			);
 			path = UIkit;
 			sourceTree = "<group>";
@@ -101,6 +105,8 @@
 				29835F8B1FDE844B001ED6B0 /* NSString+Extension.swift */,
 				2972C8351FDFA38E00F487FD /* UILable+Extension.swift */,
 				2972C8431FDFADFE00F487FD /* UIColor+Extension.swift */,
+				2986CD411FE2596D00D00F02 /* UITextView+Extension.swift */,
+				2986CD451FE26D5A00D00F02 /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -249,12 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2986CD461FE26D5A00D00F02 /* UIImageView+Extension.swift in Sources */,
 				29835F8A1FDE842F001ED6B0 /* UIView+Extension.swift in Sources */,
 				29835F8C1FDE844B001ED6B0 /* NSString+Extension.swift in Sources */,
 				2972C83C1FDFA8E000F487FD /* UIFactory.swift in Sources */,
+				2986CD421FE2596D00D00F02 /* UITextView+Extension.swift in Sources */,
 				2972C8361FDFA38E00F487FD /* UILable+Extension.swift in Sources */,
-				2972C8421FDFAB4200F487FD /* PlaceHolderTextView.swift in Sources */,
 				299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */,
+				2986CD441FE25B0100D00F02 /* SDTextView.swift in Sources */,
 				299E92E81FD92ABC007A1CA4 /* AppDelegate.swift in Sources */,
 				2972C8441FDFADFE00F487FD /* UIColor+Extension.swift in Sources */,
 			);

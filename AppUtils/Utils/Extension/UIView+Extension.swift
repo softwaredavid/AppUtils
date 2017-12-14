@@ -50,4 +50,9 @@ extension UIView {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
     }
+    // 圆角
+    func rounderRectRadius(cornerRadius: CGFloat) {
+        layer.cornerRadius = cornerRadius
+        layer.masksToBounds = true
+    }
 }
