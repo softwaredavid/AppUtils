@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 extension UILabel {
     /// MARK: 带有行间距的Label
