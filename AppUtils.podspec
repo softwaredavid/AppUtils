@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
     s.author             = { "softwaredavid" => "softwaredavid@gmail.com" }
     s.platform     = :ios,"8.0" 
     s.source       = { :git => "https://github.com/softwaredavid/AppUtils.git", :tag => "0.0.3" }
-    s.source_files  = "Utils/**/*.swift"
-    s.exclude_files = "Classes/Exclude"
+    s.source_files  = "Utils/*"
+##    s.exclude_files = "Classes/Exclude"
 ####    s.public_header_files = "iOS_Category/Classes/UIKit/UI_Categories.h"，"iOS_Category/Classes/Foundation/Foundation_Category.h"，"iOS_Category/Classes/**/*.h"
     s.requires_arc = true
 end

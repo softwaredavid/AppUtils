@@ -19,7 +19,7 @@ extension UILabel {
         
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.lineSpacing = lineSpace
-        let attributeStr = NSAttributedString(string: str, attributes: [NSAttributedStringKey.paragraphStyle:paraStyle])
+        let attributeStr = NSAttributedString(string: str, attributes: [.paragraphStyle:paraStyle])
         
         attributedText = attributeStr*/
     }
