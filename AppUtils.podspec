@@ -20,10 +20,13 @@ Pod::Spec.new do |s|
 
     s.subspec 'UI' do |ss|
     ss.source_files = "Utils/UI/*"
+    ss.dependency 'Utils/Extension/*'
+    ss.dependency 'Utils/UIkit/*'
     end
 
     s.subspec 'UIkit' do |ss|
     ss.source_files = "Utils/UIkit/*"
+    s.dependency 'Utils/Extension/*'
     end
 end
 
