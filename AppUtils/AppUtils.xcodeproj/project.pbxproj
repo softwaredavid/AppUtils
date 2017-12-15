@@ -21,6 +21,7 @@
 		299E92EF1FD92ABC007A1CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299E92EE1FD92ABC007A1CA4 /* Assets.xcassets */; };
 		299E92F21FD92ABC007A1CA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299E92F01FD92ABC007A1CA4 /* LaunchScreen.storyboard */; };
 		299E92FD1FD92ABC007A1CA4 /* AppUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92FC1FD92ABC007A1CA4 /* AppUtilsTests.swift */; };
+		29CCF9D51FE35390000E8B24 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CCF9D41FE35390000E8B24 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		299E92F81FD92ABC007A1CA4 /* AppUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		299E92FC1FD92ABC007A1CA4 /* AppUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtilsTests.swift; sourceTree = "<group>"; };
 		299E92FE1FD92ABC007A1CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29CCF9D41FE35390000E8B24 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				2986CD481FE27E3000D00F02 /* UI */,
 				2986CD4A1FE27E3000D00F02 /* Extension */,
 				2986CD511FE27E3000D00F02 /* UIkit */,
+				29CCF9D41FE35390000E8B24 /* TestViewController.swift */,
 			);
 			name = Utils;
 			path = ../../Utils;
@@ -258,6 +261,7 @@
 			files = (
 				2986CD561FE27E3100D00F02 /* UIView+Extension.swift in Sources */,
 				299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */,
+				29CCF9D51FE35390000E8B24 /* TestViewController.swift in Sources */,
 				2986CD571FE27E3100D00F02 /* NSString+Extension.swift in Sources */,
 				2986CD581FE27E3100D00F02 /* UITextView+Extension.swift in Sources */,
 				2986CD591FE27E3100D00F02 /* UILable+Extension.swift in Sources */,
