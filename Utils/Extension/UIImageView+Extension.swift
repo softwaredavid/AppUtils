@@ -10,12 +10,10 @@ import UIKit
 
 extension UIImageView {
     // 圆角
-    func imageRounderRectRadius(cornerRadius: CGFloat) {
+    public func imageRounderRectRadius(cornerRadius: CGFloat) {
         let bzPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         let layer = CAShapeLayer()
         layer.path = bzPath.cgPath
-        layer.fillColor = self.layer.borderColor
-        layer.strokeColor = self.layer.borderColor
         self.layer.mask = layer
     }
 }

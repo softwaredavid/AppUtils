@@ -13,7 +13,7 @@ extension UIColor {
     
     // 用字符串创建一个颜色 #555555 或者 555555
     // 如果字符串不符合规则 则返回  白色
-    class func createColor(colorStr: String) -> UIColor! {
+    public static func createColor(colorStr: String) -> UIColor! {
         let str = colorStr.trimmingCharacters(in: .whitespacesAndNewlines)
         let len = str.count
         

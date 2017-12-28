@@ -12,7 +12,7 @@ import UIKit
 class UIFactory {
     
     /// 创建 label
-    class func createLabel(frame: CGRect,text:String) -> UILabel? {
+    public static func createLabel(frame: CGRect,text:String) -> UILabel? {
         
         let lablel = UILabel(frame:frame)
         lablel.text = text
@@ -20,7 +20,7 @@ class UIFactory {
         return lablel
     }
     /// 创建 button
-    class func createButton(frame:CGRect,text:String?=nil,image:String?=nil) -> UIButton? {
+    public static func createButton(frame:CGRect,text:String?=nil,image:String?=nil) -> UIButton? {
         
         let button = UIButton(type: .system)
         button.frame = frame
@@ -35,7 +35,7 @@ class UIFactory {
         return button
     }
     /// 创建 textField
-    class func createTextField(frame:CGRect, placeholder: String) -> UITextField? {
+    public static func createTextField(frame:CGRect, placeholder: String) -> UITextField? {
        
         let textField = UITextField(frame: frame)
         textField.placeholder = placeholder
@@ -43,14 +43,14 @@ class UIFactory {
         return textField
     }
     /// 创建 textView
-    class func createTextView(frame:CGRect, placeholder: String) -> SDTextView? {
+    public static func createTextView(frame:CGRect, placeholder: String) -> SDTextView? {
         
       let textView = SDTextView(frame: frame, placeholder: placeholder)
         
         return textView
     }
     /// 创建 一像素宽的view
-    class func createSingWidthView(frame:CGRect,bgColor:UIColor?) -> UIView? {
+    public static func createSingWidthView(frame:CGRect,bgColor:UIColor?) -> UIView? {
         
         let view = UIView(frame:frame)
         view.height = 1
@@ -59,7 +59,7 @@ class UIFactory {
         return view
     }
     /// 创建 一像素高的view
-    class func createSingHeightView(frame:CGRect,bgColor:UIColor?) -> UIView? {
+    public static func createSingHeightView(frame:CGRect,bgColor:UIColor?) -> UIView? {
         
         let view = UIView(frame:frame)
         view.width = 1
@@ -68,7 +68,7 @@ class UIFactory {
         return view
     }
     /// 创建 imageView
-    class func createImageView(frame:CGRect,image:String) -> UIImageView? {
+    public static func createImageView(frame:CGRect,image:String) -> UIImageView? {
         
         let imageView = UIImageView(frame: frame)
         imageView.image = UIImage(named: image)

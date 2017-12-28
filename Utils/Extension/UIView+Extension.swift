@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     // x
-    var x: CGFloat {
+   public var x: CGFloat {
         set {
             frame.origin.x = newValue
         }
@@ -19,7 +19,7 @@ extension UIView {
         }
     }
     // y
-    var y: CGFloat {
+    public var y: CGFloat {
         set {
             frame.origin.y = newValue
         }
@@ -28,7 +28,7 @@ extension UIView {
         }
     }
     // width
-    var width: CGFloat {
+    public var width: CGFloat {
         set {
             frame.size.width = newValue
         }
@@ -37,7 +37,7 @@ extension UIView {
         }
     }
     // height
-    var height: CGFloat {
+    public var height: CGFloat {
         set {
             frame.size.height = newValue
         }
@@ -46,12 +46,12 @@ extension UIView {
         }
     }
     // border
-    func border(width: CGFloat, color: UIColor) {
+    public func border(width: CGFloat, color: UIColor) {
         layer.borderWidth = width
         layer.borderColor = color.cgColor
     }
     // 圆角
-    func rounderRectRadius(cornerRadius: CGFloat) {
+    public func rounderRectRadius(cornerRadius: CGFloat) {
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
     }

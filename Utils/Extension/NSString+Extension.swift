@@ -12,7 +12,7 @@ import Foundation
 
 extension String {
     // 字符串编码
-    func encodeString() -> String? {
+    public func encodeString() -> String? {
         if count == 0 {
             return nil
         }
@@ -20,12 +20,12 @@ extension String {
         return str
     }
     // 创建url 并对 字符串进行编码
-    func getUrl() -> URL? {
+    public func getUrl() -> URL? {
         let encodeStr = encodeString()
         return URL(string: encodeStr ?? "")
     }
     // 根据开始位置和长度截取字符串
-    func subString(start:Int, length:Int = -1) -> String {
+    public func subString(start:Int, length:Int = -1) -> String {
         var len = length
         if len == -1 {
             len = count - start

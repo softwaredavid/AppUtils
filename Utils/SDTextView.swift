@@ -11,7 +11,7 @@ import UIKit
 
 class SDTextView: UITextView {
     
-    var placeholder: String = "" {
+     var placeholder: String = "" {
         didSet {
             placeholderLabel?.text = placeholder
         }

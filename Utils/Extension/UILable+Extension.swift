@@ -10,9 +10,9 @@ import UIKit
 
 extension UILabel {
     /// MARK: 带有行间距的Label
-    func textLineSpace(text: String?, lineSpace: CGFloat) {
+   public func textLineSpace(text: String?, lineSpace: CGFloat) {
         
-       /* guard let str = text else {
+        guard let str = text else {
             self.text = ""
             return
         }
@@ -21,6 +21,6 @@ extension UILabel {
         paraStyle.lineSpacing = lineSpace
         let attributeStr = NSAttributedString(string: str, attributes: [.paragraphStyle:paraStyle])
         
-        attributedText = attributeStr*/
+        attributedText = attributeStr
     }
 }
