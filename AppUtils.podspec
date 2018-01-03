@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "AppUtils"
-    s.version      = "0.0.8"
+    s.version      = "0.1.0"
     s.summary      = "provide general tools for ios developer"
     s.description  = <<-DESC
     this project provide general tools for ios developer
@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
     s.license      = { :type => "MIT", :file => "LICENSE" }
     s.author             = { "softwaredavid" => "softwaredavid@gmail.com" }
     s.platform     = :ios,"8.0" 
-    s.source       = { :git => "https://github.com/softwaredavid/AppUtils.git", :tag => "0.0.8" }
+    s.source       = { :git => "https://github.com/softwaredavid/AppUtils.git", :tag => "0.1.0" }
     s.source_files  = "Utils/*"
     s.requires_arc = true
 
