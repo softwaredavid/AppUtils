@@ -10,6 +10,7 @@
 		29676F241FE4A51C00A3EFC9 /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29676F221FE4A51C00A3EFC9 /* UIFactory.swift */; };
 		29676F251FE4A51C00A3EFC9 /* SDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29676F231FE4A51C00A3EFC9 /* SDTextView.swift */; };
 		296774FC1FE4ED1B00A3EFC9 /* NetUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296774FB1FE4ED1B00A3EFC9 /* NetUtil.swift */; };
+		296B138C1FFCAA0100A09247 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B138B1FFCAA0100A09247 /* App.swift */; };
 		2986CD541FE27E3000D00F02 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986CD4B1FE27E3000D00F02 /* UIImageView+Extension.swift */; };
 		2986CD551FE27E3000D00F02 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986CD4C1FE27E3000D00F02 /* UIColor+Extension.swift */; };
 		2986CD561FE27E3100D00F02 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2986CD4D1FE27E3000D00F02 /* UIView+Extension.swift */; };
@@ -38,6 +39,7 @@
 		29676F221FE4A51C00A3EFC9 /* UIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
 		29676F231FE4A51C00A3EFC9 /* SDTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDTextView.swift; sourceTree = "<group>"; };
 		296774FB1FE4ED1B00A3EFC9 /* NetUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetUtil.swift; sourceTree = "<group>"; };
+		296B138B1FFCAA0100A09247 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		2986CD4B1FE27E3000D00F02 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		2986CD4C1FE27E3000D00F02 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2986CD4D1FE27E3000D00F02 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				29676F231FE4A51C00A3EFC9 /* SDTextView.swift */,
 				29676F221FE4A51C00A3EFC9 /* UIFactory.swift */,
 				29CCF9D41FE35390000E8B24 /* TestViewController.swift */,
+				296B138B1FFCAA0100A09247 /* App.swift */,
 				2986CD4A1FE27E3000D00F02 /* Extension */,
 			);
 			name = Utils;
@@ -331,6 +334,7 @@
 				299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */,
 				29CCF9D51FE35390000E8B24 /* TestViewController.swift in Sources */,
 				2986CD571FE27E3100D00F02 /* NSString+Extension.swift in Sources */,
+				296B138C1FFCAA0100A09247 /* App.swift in Sources */,
 				29676F241FE4A51C00A3EFC9 /* UIFactory.swift in Sources */,
 				2986CD581FE27E3100D00F02 /* UITextView+Extension.swift in Sources */,
 				2986CD591FE27E3100D00F02 /* UILable+Extension.swift in Sources */,

@@ -11,6 +11,7 @@
 //}
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         vi.border(width: 1, color: UIColor.red)
         vi.rounderRectRadius(cornerRadius: 5)
         view.addSubview(vi)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -6,9 +6,10 @@
 //  Copyright © 2017年 田守彬. All rights reserved.
 
 // 字符串的相关扩展:
-//              字符串创建URL 字符串编码 字符串截取
+//              字符串创建URL 字符串编码 字符串截取 获取字符串的高度
 
 import Foundation
+import UIKit
 
 extension String {
     // 字符串编码
@@ -42,5 +43,12 @@ extension String {
             endPosition = index(startPosition, offsetBy:len)
         }
         return String(self[startPosition ..< endPosition])
+    }
+    // 获取字符串的高度
+    public func getHeight(font:UIFont,width:CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: CGFloat(MAXFLOAT))
+        let dic = [NSAttributedStringKey.font:font]
+        let stringSize = self.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: dic, context:nil)
+        return stringSize.height
     }
 }
