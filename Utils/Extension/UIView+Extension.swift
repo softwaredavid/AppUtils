@@ -63,4 +63,39 @@ extension UIView {
         layer.shadowRadius = radius
         layer.shadowOffset = offset
     }
+    /// MARK:  view添加圆角 1 那个叫添加圆角  2 圆角大小 3 view的背景色
+    public func addRoundedCorners(_ cornersToRound: UIRectCorner, cornerRadius: CGSize, color: UIColor) {
+        let rect = bounds
+        let maskPath = UIBezierPath(roundedRect: rect, byRoundingCorners: cornersToRound, cornerRadii: cornerRadius)
+        
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = rect
+        maskLayer.path = maskPath.cgPath
+        
+        let roundedLayer = CALayer()
+        roundedLayer.backgroundColor = color.cgColor
+        roundedLayer.frame = rect
+        roundedLayer.mask = maskLayer
+        
+        layer.insertSublayer(roundedLayer, at: 0)
+        backgroundColor = UIColor.clear
+    }
+    // 把当前的view clone一份
+    public func clone() -> UIView {
+        let data = NSKeyedArchiver.archivedData(withRootObject: self)
+        return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIView
+    }
+    //MRAK == 截屏
+    public func screenshot(_ size: CGSize, offset: CGPoint? = nil, quality: CGFloat = 1) -> UIImage? {
+        assert(0...1 ~= quality)
+        
+        let offset = offset ?? CGPoint(x: 0, y: 0)
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale * quality)
+        drawHierarchy(in: CGRect(origin: offset, size: frame.size), afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
 }

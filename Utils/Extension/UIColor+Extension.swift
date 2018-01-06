@@ -41,3 +41,9 @@ extension UIColor {
         return UIColor(red: CGFloat(CGFloat(red)/255.0), green: CGFloat(CGFloat(green)/255.0), blue: CGFloat(CGFloat(blue)/255.0), alpha: 1.0)
     }
 }
+// 常用颜色 配置
+extension UIColor {
+    struct NavColor {
+        static let redColor = UIColor.red
+    }
+}
