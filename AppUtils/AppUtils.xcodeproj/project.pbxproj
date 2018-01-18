@@ -23,6 +23,8 @@
 		299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92E91FD92ABC007A1CA4 /* ViewController.swift */; };
 		299E92EF1FD92ABC007A1CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299E92EE1FD92ABC007A1CA4 /* Assets.xcassets */; };
 		299E92FD1FD92ABC007A1CA4 /* AppUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92FC1FD92ABC007A1CA4 /* AppUtilsTests.swift */; };
+		29BC62B2201094C800BF8F26 /* ParsePara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC62B0201094C800BF8F26 /* ParsePara.swift */; };
+		29BC62B3201094C800BF8F26 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC62B1201094C800BF8F26 /* Service.swift */; };
 		29BD7A8820007BE900418CB1 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD7A8720007BE900418CB1 /* Dictionary+Extension.swift */; };
 		29BD7A8A20007CD000418CB1 /* Thread+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD7A8920007CD000418CB1 /* Thread+Extension.swift */; };
 		29BD7A8C2000814D00418CB1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD7A8B2000814D00418CB1 /* UIApplication+Extension.swift */; };
@@ -64,6 +66,8 @@
 		299E92F81FD92ABC007A1CA4 /* AppUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		299E92FC1FD92ABC007A1CA4 /* AppUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtilsTests.swift; sourceTree = "<group>"; };
 		299E92FE1FD92ABC007A1CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29BC62B0201094C800BF8F26 /* ParsePara.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsePara.swift; sourceTree = "<group>"; };
+		29BC62B1201094C800BF8F26 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		29BD7A8720007BE900418CB1 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		29BD7A8920007CD000418CB1 /* Thread+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+Extension.swift"; sourceTree = "<group>"; };
 		29BD7A8B2000814D00418CB1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		296774FA1FE4ECE300A3EFC9 /* Net */ = {
 			isa = PBXGroup;
 			children = (
+				29BC62B0201094C800BF8F26 /* ParsePara.swift */,
+				29BC62B1201094C800BF8F26 /* Service.swift */,
 				296774FB1FE4ED1B00A3EFC9 /* NetUtil.swift */,
 			);
 			path = Net;
@@ -354,12 +360,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2986CD561FE27E3100D00F02 /* UIView+Extension.swift in Sources */,
+				29BC62B2201094C800BF8F26 /* ParsePara.swift in Sources */,
 				299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */,
 				29CCF9D51FE35390000E8B24 /* TestViewController.swift in Sources */,
 				2986CD571FE27E3100D00F02 /* NSString+Extension.swift in Sources */,
 				29BD7A8C2000814D00418CB1 /* UIApplication+Extension.swift in Sources */,
 				296B138C1FFCAA0100A09247 /* App.swift in Sources */,
 				29676F241FE4A51C00A3EFC9 /* UIFactory.swift in Sources */,
+				29BC62B3201094C800BF8F26 /* Service.swift in Sources */,
 				29866CD71FFF0B5E00E121C6 /* Array+Extension.swift in Sources */,
 				29BD7A8820007BE900418CB1 /* Dictionary+Extension.swift in Sources */,
 				2986CD581FE27E3100D00F02 /* UITextView+Extension.swift in Sources */,

@@ -66,6 +66,22 @@ class ViewController: UIViewController {
             return $0 == "e"
         }
         print(c)
+//        for item in arr.drop(while: { (<#String#>) -> Bool in
+//            <#code#>
+//        }) {
+//            <#code#>
+//        }
+        var arr2 = ["a","b","c","f"]
+        let a = arr2.drop { str -> Bool in
+            print(str)// 返回true元素将会被删除 检测到条件时会提前退出 检测到fasle时会退出
+            return str != "c"
+        }
+        let b = arr2.prefix { str -> Bool in
+            return str == "c"
+        }
+        print(arr2)
+        print(a)
+         print(b)
     }
     // 汉字转拼音
     func covertToPingYin() {

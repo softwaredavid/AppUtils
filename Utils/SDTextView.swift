@@ -11,7 +11,7 @@ import UIKit
 
 class SDTextView: UITextView {
     
-     var placeholder: String = "" {
+     var placeholder: String = "请输入内容" {
         didSet {
             placeholderLabel?.text = placeholder
         }
@@ -22,7 +22,6 @@ class SDTextView: UITextView {
         self.init(frame: frame, textContainer: nil)
         createPlaceholder(placeholderText: placeholder)
     }
-    
     private func createPlaceholder(placeholderText: String) {
         if placeholderLabel == nil {
             let lab = UILabel(frame: CGRect(x: 6, y: 6, width: width, height: 20))
@@ -36,5 +35,8 @@ class SDTextView: UITextView {
     }
     @objc func textChanged() {
         self.placeholderLabel?.isHidden = text.count != 0
+    }
+    deinit {
+      NotificationCenter.default.removeObserver(self)
     }
 }
