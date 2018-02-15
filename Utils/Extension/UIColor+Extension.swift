@@ -46,4 +46,7 @@ extension UIColor {
     struct NavColor {
         static let redColor = UIColor.red
     }
+    struct ViewColor {
+        static let bgColor = UIColor.createColor(colorStr: "#f1f1f1")
+    }
 }

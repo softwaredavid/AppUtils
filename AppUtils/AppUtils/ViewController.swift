@@ -29,7 +29,19 @@ class ViewController: UIViewController {
         y.backgroundColor = UIColor.yellow
         vi.addSubview(y)
         view.addSubview(vi)
+        //"TrialProjectid":"6da04545-2464-468f-998f-576584c9c8e4"
+        let str = "{\"TrialProjectid" + ":" + "6da04545-2464-468f-998f-576584c9c8e4\"}"
         
+//        let net = NetToos.shared
+//        net.post(url: "https://appjk.niceloo.com/App/PortalServiceIOS.asmx/GetOneTwoClass", para: ["TrialProjectid":"6da04545-2464-468f-998f-576584c9c8e4"]) { (success, dic) in
+//
+//        }
+        var user = User()
+        user.account = "15037153382"
+        user.passWord = "123456"
+        user.login(user: user) {
+            
+        }
         
         let v2 = vi.clone()
         v2.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
@@ -59,6 +71,7 @@ class ViewController: UIViewController {
          來源：简书
          著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
          */
+        
         
         let arr = ["q","w","e"]
         let c =  arr.find {

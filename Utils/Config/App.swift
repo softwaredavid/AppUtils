@@ -10,6 +10,7 @@
 
 import UIKit
 
+typealias void_func_void = () -> ()
 typealias UITableViewProtocol = UITableViewDataSource & UITableViewDelegate
 
 public let screen_width = UIScreen.main.bounds.width

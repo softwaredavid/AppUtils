@@ -1,0 +1,12 @@
+//
+//  app. modulemap.metal
+//  AppUtils
+//
+//  Created by shuaitong du on 2018/2/13.
+//  Copyright © 2018年 田守彬. All rights reserved.
+//
+
+#include <metal_stdlib>
+using namespace metal;
+
+
