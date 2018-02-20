@@ -34,12 +34,12 @@ class NetToos {
     func request(url: String, method: HTTPMethod, parameters: [String: Any],response: @escaping (Bool, Data?) -> Void) -> DataRequest {
         let str = Parater.covertDicToJson(dic: parameters)
         let data = AES.aesEncryptText(str)
-        let dic:[String: Any] = ["jsonData":data as Any]
-        
-        let request =  Alamofire.request(url,method: .post,parameters: dic).responseData {
+        let dic:[String: String] = ["jsonData":data!]
+        let request =  Alamofire.request(url,method: .post,parameters: dic).responseString {
             if $0.result.isSuccess {
                 if $0.result.value != nil {
                     let json = self.handleParaToData(data: $0.result.value!)
+                    print(self.handleParaToJSON(data: $0.result.value!))
                     response(true,json)
                 } else {
                     response(true,nil)
@@ -64,7 +64,7 @@ class NetToos {
         }, to: url) { encodingResult in
             switch encodingResult {
             case .success(let upload, _, _):
-                upload.responseData(completionHandler: {
+                upload.responseString(completionHandler: {
                     if $0.result.value != nil {
                         let json = self.handleParaToData(data: $0.result.value!)
                         response(true,json)
@@ -90,7 +90,7 @@ class NetToos {
         req.downloadProgress(queue: DispatchQueue.main) { (p) in
             
         }
-        req.responseData { (down) in
+        req.responseString { (down) in
             if down.result.isSuccess {
                 if down.result.value != nil {
                     let json = self.handleParaToData(data: down.result.value!)
@@ -106,15 +106,13 @@ class NetToos {
         req.resume()
     }
     // 转换为Data
-    private func handleParaToData(data: Data) -> Data? {
-        let sr = String(data: data, encoding: .utf8)
-        let data = AES.aesDencryptText(sr)
+    private func handleParaToData(data: String) -> Data? {
+        let data = AES.aesDencryptText(data)
         return data
     }
     // 转换为json
-    private func handleParaToJSON(data: Data) -> [String : Any]? {
-        let sr = String(data: data, encoding: .utf8)
-        let responseStr = AES.aesDencryptText(sr)
+    private func handleParaToJSON(data: String) -> [String : Any]? {
+        let responseStr = AES.aesDencryptText(data)
         let json = Parater.covertDataJson(data: responseStr)
         return json
     }

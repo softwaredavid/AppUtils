@@ -69,8 +69,10 @@ const NSUInteger kPBKDFRounds1 = 10000;
                                           [[AES AESPass:AES_PASSWORD] bytes],
                                           kCCKeySizeAES256,
                                           ivBuff ,
-                                          [plainText bytes], dataLength,
-                                          buffer, bufferSize,
+                                          [plainText bytes],
+                                          dataLength,
+                                          buffer,
+                                          bufferSize,
                                           &numBytesEncrypted);
     if (cryptStatus == kCCSuccess) {
         NSData *encryptData = [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];

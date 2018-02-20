@@ -21,9 +21,15 @@ struct ResultModel<T: Codable>: Codable {
     var Data: T?
 }
 struct UserInfo: Codable {
-    var UserName: String?
-    var Password: String?
-    var UserId: String?
+    var userName: String?
+    var password: String?
+    var userId: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case userName = "UserName"
+        case password = "Password"
+        case userId = "UserId"
+    }
 }
 struct User {
     
@@ -37,7 +43,7 @@ struct User {
     func saveUser(user: UserInfo) {}
     func clearUser() {}
     
-    func login(user: User?,type: LogType = .normal,complete:void_func_void?) {
+    func login(user: User?,type: LogType = .normal,complete:((UserInfo)->())?) {
         switch type {
         case .normal:
             loginNormal(user: user, complete: complete)
@@ -48,8 +54,7 @@ struct User {
         }
         
     }
-    
-    private func loginNormal(user: User?,complete: void_func_void?) {
+    private func loginNormal(user: User?,complete: ((UserInfo)->())?) {
         guard let _ = user else { return }
         guard let _ = user?.account else { return }
         guard let _ = user?.passWord else { return }
@@ -59,21 +64,25 @@ struct User {
                 Alert.showText(text: "网络出错,请检查您的网络连接")
             } else {
                 let result = JSON.parseJSON(type: ResultModel<UserInfo>.self, data: resoponse)
-//                guard let code = resoponse?["Code"] as? String else {
-//                    return
-//                }
-//                if code == "1" {
-//                    //let user = JSON.parseJSON(data: <#T##Data?#>)
-//                    complete?()
-//                } else {
-//                    //let msg = resoponse?["Msg"] as? String
-//                    Alert.showText(text: msg ?? "服务器出错了,请联系客服")
-//                }
+                guard let code = result?.Code else {
+                    return
+                }
+                if code == "1" {
+                    if result?.Data != nil {
+                        let u = result!.Data!
+                        user?.saveUser(user: u)
+                        complete?(u)
+                    } else {
+                        Alert.showText(text: "参数解析错误")
+                    }
+                } else {
+                    Alert.showText(text: result?.Msg ?? "服务器出错了,请联系客服")
+                }
             }
         }
     }
     private func loginWeixin() {}
-    private func longinQQ() {}
+    private func loginQQ() {}
     
     static func logout(user: User,complete: void_func_void?) {
         user.clearUser()

@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         user.account = "15037153382"
         user.passWord = "123456"
         user.login(user: user) {
-            
+            print($0.userId)
         }
         
         let v2 = vi.clone()

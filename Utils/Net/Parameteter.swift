@@ -16,7 +16,7 @@ struct Parater {
         }
         var jsonData: Data?
         do {
-            jsonData = try JSONSerialization.data(withJSONObject: covertDic, options: [])
+            jsonData = try JSONSerialization.data(withJSONObject: covertDic, options: .prettyPrinted)
         } catch  {
             print("dic covert to json filed")
             jsonData = nil
