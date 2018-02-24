@@ -36,6 +36,9 @@ class ViewController: UIViewController {
 //        net.post(url: "https://appjk.niceloo.com/App/PortalServiceIOS.asmx/GetOneTwoClass", para: ["TrialProjectid":"6da04545-2464-468f-998f-576584c9c8e4"]) { (success, dic) in
 //
 //        }
+        print("".isNull())
+        
+        
         var user = User()
         user.account = "15037153382"
         user.passWord = "123456"

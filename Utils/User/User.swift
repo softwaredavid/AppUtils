@@ -16,10 +16,17 @@ enum LogType {
     case qq
 }
 struct ResultModel<T: Codable>: Codable {
-    var Code: String?
-    var Msg: String?
-    var Data: T?
+    var code: String?
+    var msg: String?
+    var data: T?
+    
+    enum CodingKeys: String, CodingKey {
+        case code = "Code"
+        case msg = "Msg"
+        case data = "Data"
+    }
 }
+
 struct UserInfo: Codable {
     var userName: String?
     var password: String?
@@ -40,7 +47,12 @@ struct User {
     var newPassWord: String?
     
     
-    func saveUser(user: UserInfo) {}
+    func saveUser(user: UserInfo) {
+        let userDefault = UserDefaults.standard
+        if user.userName != nil {
+            userDefault.set(user.userName, forKey: UserDefaults.UserInfo.userName)
+        }
+    }
     func clearUser() {}
     
     func login(user: User?,type: LogType = .normal,complete:((UserInfo)->())?) {
@@ -64,19 +76,19 @@ struct User {
                 Alert.showText(text: "网络出错,请检查您的网络连接")
             } else {
                 let result = JSON.parseJSON(type: ResultModel<UserInfo>.self, data: resoponse)
-                guard let code = result?.Code else {
+                guard let code = result?.code else {
                     return
                 }
                 if code == "1" {
-                    if result?.Data != nil {
-                        let u = result!.Data!
+                    if result?.data != nil {
+                        let u = result!.data!
                         user?.saveUser(user: u)
                         complete?(u)
                     } else {
                         Alert.showText(text: "参数解析错误")
                     }
                 } else {
-                    Alert.showText(text: result?.Msg ?? "服务器出错了,请联系客服")
+                    Alert.showText(text: result?.msg ?? "服务器出错了,请联系客服")
                 }
             }
         }

@@ -51,4 +51,9 @@ extension String {
         let stringSize = self.boundingRect(with: size, options:.usesLineFragmentOrigin, attributes: dic, context:nil)
         return stringSize.height
     }
+    // 字符串是否为空
+    public func isNull() -> Bool {
+        let str = self.trimmingCharacters(in: .whitespaces)
+        return str.isEmpty
+    }
 }

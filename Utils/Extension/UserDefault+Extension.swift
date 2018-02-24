@@ -11,6 +11,8 @@ import UIKit
 // 常用存储Ke配置
 extension UserDefaults {
     struct UserInfo {
-        static let UserName = ""
+        static let userName = "userName"
+        static let password = "password"
+        static let userId = "userId"
     }
 }
