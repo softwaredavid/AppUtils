@@ -5,6 +5,32 @@
 //  Created by shuaitong du on 2018/2/12.
 //  Copyright © 2018年 田守彬. All rights reserved.
 //
+
+struct ResultModel<T: Codable>: Codable {
+    var code: String?
+    var msg: String?
+    var data: T?
+    
+    enum CodingKeys: String, CodingKey {
+        case code = "Code"
+        case msg = "Msg"
+        case data = "Data"
+    }
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy:CodingKeys.self)
+        code = try? container.decode(String.self, forKey: .code)
+        msg = try? container.decode(String.self, forKey: .msg)
+        data = try? container.decode(T.self, forKey: .data)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try? container.encode(code, forKey: .code)
+        try? container.encode(msg, forKey: .msg)
+        try? container.encode(data, forKey: .data)
+    }
+}
+
 struct FileData {
     var fileData: Data! // 文件数据
     var fileName: String! // 文件名字
@@ -19,19 +45,19 @@ class NetToos {
     private init() {}
     
     @discardableResult
-    func get(url:String,para: [String: String],response: @escaping (Bool, Data?) -> Void) -> DataRequest {
+    func get<T>(url:String,para: [String: String],modelType: T.Type,response: @escaping (Bool, T?) -> Void) -> DataRequest where T : Codable {
         return request(url: url, method: .get
-            , parameters: para, response: response)
+            , parameters: para, modelType: modelType, response: response)
     }
     
     @discardableResult
-    func post(url:String,para: [String: String],response: @escaping (Bool, Data?) -> Void) -> DataRequest {
+    func post<T>(url:String,para: [String: String],modelType: T.Type,response: @escaping (Bool, T?) -> Void) -> DataRequest where T : Codable {
         return request(url: url, method: .post
-            , parameters: para, response: response)
+            , parameters: para, modelType: modelType, response: response)
     }
     
     @discardableResult
-    func request(url: String, method: HTTPMethod, parameters: [String: Any],response: @escaping (Bool, Data?) -> Void) -> DataRequest {
+    func request<T>(url: String, method: HTTPMethod, parameters: [String: Any],modelType: T.Type,response: @escaping (Bool, T?) -> Void) -> DataRequest where T : Codable {
         let str = Parater.covertDicToJson(dic: parameters)
         let data = AES.aesEncryptText(str)
         let dic:[String: String] = ["jsonData":data!]
@@ -40,11 +66,21 @@ class NetToos {
                 if $0.result.value != nil {
                     let json = self.handleParaToData(data: $0.result.value!)
                     print(self.handleParaToJSON(data: $0.result.value!))
-                    response(true,json)
+                    if json == nil {
+                        response(false,nil)
+                    } else {
+                        let data = self.parsePara(para: modelType, data: json!)
+                        if !data.0 {
+                            response(false,nil)
+                        } else {
+                            response(true,data.1)
+                        }
+                    }
                 } else {
                     response(true,nil)
                 }
             } else {
+                Alert.showText(text: "网络出错,请检查您的网络连接")
                 response(false,nil)
             }
         }
@@ -73,6 +109,7 @@ class NetToos {
                     }
                 })
             case .failure(_):
+                Alert.showText(text: "网络出错,请检查您的网络连接")
                 response(false,nil)
             }
         }
@@ -99,12 +136,16 @@ class NetToos {
                     response(true,nil)
                 }
             } else {
+                Alert.showText(text: "网络出错,请检查您的网络连接")
                 response(false,nil)
             }
         }
         req.suspend()
         req.resume()
     }
+}
+// 参数处理
+extension NetToos {
     // 转换为Data
     private func handleParaToData(data: String) -> Data? {
         let data = AES.aesDencryptText(data)
@@ -115,5 +156,25 @@ class NetToos {
         let responseStr = AES.aesDencryptText(data)
         let json = Parater.covertDataJson(data: responseStr)
         return json
+    }
+    
+    // 解密后的参数处理
+    private func parsePara<T>(para: T.Type,data: Data) -> (Bool,T?) where T : Codable {
+        let result = JSON.parseJSON(type: ResultModel<T>.self, data: data)
+        guard let code = result?.code else {
+            Alert.showText(text: "数据解析失败")
+            return (false,nil)
+        }
+        if code == "1" {
+            if result?.data != nil {
+                return (true,result!.data)
+            } else {
+                Alert.showText(text: "参数解析错误")
+                return (false,nil)
+            }
+        } else {
+            Alert.showText(text: result?.msg ?? "服务器出错了,请联系客服")
+            return (false,nil)
+        }
     }
 }

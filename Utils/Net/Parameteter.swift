@@ -18,7 +18,7 @@ struct Parater {
         do {
             jsonData = try JSONSerialization.data(withJSONObject: covertDic, options: .prettyPrinted)
         } catch  {
-            print("dic covert to json filed")
+            print("dic covert to json fail")
             jsonData = nil
         }
         if jsonData == nil {
@@ -35,7 +35,7 @@ struct Parater {
         do {
             jsonObj =  try JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? [String : Any]
         } catch  {
-            print("json covert obj filed")
+            print("json covert obj fail")
             return nil
         }
         return jsonObj

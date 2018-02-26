@@ -56,4 +56,11 @@ extension String {
         let str = self.trimmingCharacters(in: .whitespaces)
         return str.isEmpty
     }
+    // 是不是手机号
+    public func isPhone() -> Bool {
+        if self.isNull() { return false }
+        if !self.hasPrefix("1") { return false }
+        if self.count != 11 { return false }
+        return true
+    }
 }

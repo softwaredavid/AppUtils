@@ -20,7 +20,6 @@
 		299E92E81FD92ABC007A1CA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92E71FD92ABC007A1CA4 /* AppDelegate.swift */; };
 		299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299E92E91FD92ABC007A1CA4 /* ViewController.swift */; };
 		299E92EF1FD92ABC007A1CA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299E92EE1FD92ABC007A1CA4 /* Assets.xcassets */; };
-		29BC62B2201094C800BF8F26 /* ParsePara.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BC62B0201094C800BF8F26 /* ParsePara.swift */; };
 		29BD7A8820007BE900418CB1 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD7A8720007BE900418CB1 /* Dictionary+Extension.swift */; };
 		29BD7A8A20007CD000418CB1 /* Thread+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD7A8920007CD000418CB1 /* Thread+Extension.swift */; };
 		29BD7A8C2000814D00418CB1 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BD7A8B2000814D00418CB1 /* UIApplication+Extension.swift */; };
@@ -67,7 +66,6 @@
 		299E92EE1FD92ABC007A1CA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		299E92F31FD92ABC007A1CA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299E92F81FD92ABC007A1CA4 /* AppUtilsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUtilsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29BC62B0201094C800BF8F26 /* ParsePara.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsePara.swift; sourceTree = "<group>"; };
 		29BD7A8720007BE900418CB1 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		29BD7A8920007CD000418CB1 /* Thread+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Thread+Extension.swift"; sourceTree = "<group>"; };
 		29BD7A8B2000814D00418CB1 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			children = (
 				D9E6AA332032953600A51D19 /* AES.h */,
 				D9E6AA342032953600A51D19 /* AES.m */,
-				29BC62B0201094C800BF8F26 /* ParsePara.swift */,
 				D9849C3D2031E31900FA41A3 /* NetTool.swift */,
 				D9849C402031EB5F00FA41A3 /* Parameteter.swift */,
 			);
@@ -429,7 +426,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2986CD561FE27E3100D00F02 /* UIView+Extension.swift in Sources */,
-				29BC62B2201094C800BF8F26 /* ParsePara.swift in Sources */,
 				299E92EA1FD92ABC007A1CA4 /* ViewController.swift in Sources */,
 				D9E6AA412033ECD300A51D19 /* User.swift in Sources */,
 				29CCF9D51FE35390000E8B24 /* TestViewController.swift in Sources */,
@@ -588,6 +584,7 @@
 			baseConfigurationReference = 6B089280CB65DBCD3314018F /* Pods-AppUtils.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MS239G7WLM;
@@ -597,7 +594,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.niceloo.niceloo.AppUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shuaitongdu/Desktop/代码/AppUtils/Utils/Extension/Bindheader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/tianshoubin/Desktop/代码/AppUtils/Utils/Extension/Bindheader.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -609,6 +606,7 @@
 			baseConfigurationReference = 6F67899792AF41F49C35FE24 /* Pods-AppUtils.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MS239G7WLM;
@@ -618,7 +616,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.niceloo.niceloo.AppUtils;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = CommonCrypto;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/shuaitongdu/Desktop/代码/AppUtils/Utils/Extension/Bindheader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/tianshoubin/Desktop/代码/AppUtils/Utils/Extension/Bindheader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

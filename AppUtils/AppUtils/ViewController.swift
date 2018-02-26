@@ -39,12 +39,12 @@ class ViewController: UIViewController {
         print("".isNull())
         
         
-        var user = User()
-        user.account = "15037153382"
-        user.passWord = "123456"
-        user.login(user: user) {
-            print($0.userId)
-        }
+//        var user = User()
+//        user.account = "15037153382"
+//        user.passWord = "123456"
+//        user.login(user: user) {
+//            print($0.userId)
+//        }
         
         let v2 = vi.clone()
         v2.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
@@ -74,7 +74,13 @@ class ViewController: UIViewController {
          來源：简书
          著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
          */
-        
+        User.getUserInfo {
+            print($0.getSex().rawValue)
+            print($0.userName)
+            print($0.userIcon)
+            print($0.phone)
+            print($0.userId)
+        }
         
         let arr = ["q","w","e"]
         let c =  arr.find {
@@ -109,7 +115,12 @@ class ViewController: UIViewController {
          }
     }
     @objc func click() {
-        
+        var user = User()
+        user.account = "15037153382"
+        user.password = "123456"
+        user.login() {
+            print($0.userId)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

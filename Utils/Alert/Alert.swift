@@ -9,10 +9,11 @@
 import MBProgressHUD
 
 struct Alert {
-    static func showText(text: String) {
+    @discardableResult
+    static func showText(text: String) -> MBProgressHUD? {
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         guard let window = appDelegate.window else {
-            return
+            return nil
         }
         let hud = MBProgressHUD.showAdded(to: window, animated: true)
         hud.mode = .text
@@ -24,5 +25,18 @@ struct Alert {
         hud.margin = 10
         hud.removeFromSuperViewOnHide = true
         hud.hide(animated: true, afterDelay: 2)
+        return hud
+    }
+    @discardableResult
+    static func showProgressView(text: String?="请稍候") -> MBProgressHUD? {
+        let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+        guard let window = appDelegate.window else {
+            return nil
+        }
+        let hud = MBProgressHUD.showAdded(to: window, animated: true)
+        hud.label.text = text
+        hud.minSize = CGSize(width: 100, height: 50)
+        hud.removeFromSuperViewOnHide = true
+        return hud
     }
 }
