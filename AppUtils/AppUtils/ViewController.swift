@@ -124,6 +124,9 @@ class ViewController: UIViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        #if swift(>=3.2)
+        #else
+        #endif
         // Dispose of any resources that can be recreated.
     }
 

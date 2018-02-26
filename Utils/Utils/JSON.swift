@@ -8,8 +8,8 @@ struct JSON {
     static func parseJSON<T>(type: T.Type,data: Data?) ->T? where T : Decodable {
         var obj: T?
         do {
-           obj = try! JSONDecoder().decode(type, from: data!)
-        } catch  {
+           obj = try JSONDecoder().decode(type, from: data!)
+        } catch {
             print("parse json fail")
         }
         return obj

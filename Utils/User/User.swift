@@ -41,7 +41,7 @@ struct UserInfo: Codable {
     }
 }
 
-enum Sex: String,Codable {
+enum Sex: String {
     case man = "男"
     case woman = "女"
 }

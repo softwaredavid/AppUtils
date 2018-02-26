@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292D43BE2043FFEE00C4D85C /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D43BD2043FFEE00C4D85C /* Navigation+Extension.swift */; };
 		29676F241FE4A51C00A3EFC9 /* UIFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29676F221FE4A51C00A3EFC9 /* UIFactory.swift */; };
 		29676F251FE4A51C00A3EFC9 /* SDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29676F231FE4A51C00A3EFC9 /* SDTextView.swift */; };
 		296B138C1FFCAA0100A09247 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B138B1FFCAA0100A09247 /* App.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		292D43BD2043FFEE00C4D85C /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 		29676F221FE4A51C00A3EFC9 /* UIFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFactory.swift; sourceTree = "<group>"; };
 		29676F231FE4A51C00A3EFC9 /* SDTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDTextView.swift; sourceTree = "<group>"; };
 		296B138B1FFCAA0100A09247 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				29BD7A8D20009AC400418CB1 /* UserDefault+Extension.swift */,
 				D9E6AA392033DFC600A51D19 /* UIFont+Extension.swift */,
 				D9E6AA2A2032864800A51D19 /* Bindheader.h */,
+				292D43BD2043FFEE00C4D85C /* Navigation+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				2986CD581FE27E3100D00F02 /* UITextView+Extension.swift in Sources */,
 				29BD7A8E20009AC400418CB1 /* UserDefault+Extension.swift in Sources */,
 				2986CD591FE27E3100D00F02 /* UILable+Extension.swift in Sources */,
+				292D43BE2043FFEE00C4D85C /* Navigation+Extension.swift in Sources */,
 				D9849C412031EB5F00FA41A3 /* Parameteter.swift in Sources */,
 				D960A1EA20354A5E00455AF3 /* Alert.swift in Sources */,
 				299E92E81FD92ABC007A1CA4 /* AppDelegate.swift in Sources */,
