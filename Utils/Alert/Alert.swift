@@ -15,16 +15,19 @@ struct Alert {
         guard let window = appDelegate.window else {
             return nil
         }
-        let hud = MBProgressHUD.showAdded(to: window, animated: true)
-        hud.mode = .text
-        hud.detailsLabel.text = text
-        hud.detailsLabel.font = UIFont.systemFont(ofSize: 13)
-        hud.bezelView.color = UIColor.black.withAlphaComponent(0.8)
-        hud.detailsLabel.textColor = UIColor.white
-        hud.offset.y = (screen_height - 64) / 2 - 100
-        hud.margin = 10
-        hud.removeFromSuperViewOnHide = true
-        hud.hide(animated: true, afterDelay: 2)
+        var hud: MBProgressHUD!
+        Thread.ensureMainThread {
+            hud = MBProgressHUD.showAdded(to: window, animated: true)
+            hud.mode = .text
+            hud.detailsLabel.text = text
+            hud.detailsLabel.font = UIFont.systemFont(ofSize: 13)
+            hud.bezelView.color = UIColor.black.withAlphaComponent(0.8)
+            hud.detailsLabel.textColor = UIColor.white
+            hud.offset.y = (screen_height - 64) / 2 - 100
+            hud.margin = 10
+            hud.removeFromSuperViewOnHide = true
+            hud.hide(animated: true, afterDelay: 2)
+        }
         return hud
     }
     @discardableResult
@@ -33,10 +36,13 @@ struct Alert {
         guard let window = appDelegate.window else {
             return nil
         }
-        let hud = MBProgressHUD.showAdded(to: window, animated: true)
-        hud.label.text = text
-        hud.minSize = CGSize(width: 100, height: 50)
-        hud.removeFromSuperViewOnHide = true
+        var hud: MBProgressHUD!
+        Thread.ensureMainThread {
+            hud = MBProgressHUD.showAdded(to: window, animated: true)
+            hud.label.text = text
+            hud.minSize = CGSize(width: 100, height: 50)
+            hud.removeFromSuperViewOnHide = true
+        }
         return hud
     }
 }

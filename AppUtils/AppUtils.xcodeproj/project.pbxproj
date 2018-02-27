@@ -132,7 +132,6 @@
 				D960A1EB203574CA00455AF3 /* Utils */,
 				D960A1E82035498100455AF3 /* Alert */,
 				D9E6AA432033F2DC00A51D19 /* Base */,
-				D9E6AA422033F1C200A51D19 /* Project */,
 				D9E6AA3D2033EC9800A51D19 /* User */,
 				D9E6AA382033DF9200A51D19 /* Config */,
 				296774FA1FE4ECE300A3EFC9 /* Net */,
@@ -250,13 +249,6 @@
 				D9E6AA402033ECD300A51D19 /* User.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		D9E6AA422033F1C200A51D19 /* Project */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Project;
 			sourceTree = "<group>";
 		};
 		D9E6AA432033F2DC00A51D19 /* Base */ = {
